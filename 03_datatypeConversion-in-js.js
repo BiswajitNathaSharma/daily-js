@@ -1,7 +1,7 @@
 // investigational study about numbers in javaScript. 
 
 
-let score = "89aaa"
+let score = 89
 console.log(typeof(score)); // string
 
 let scoreToNumber = Number(score)
@@ -61,3 +61,8 @@ undefined -> false
 ""      -> false
  */
 
+let score2 = 22
+const name2 = String(score)
+console.log(typeof(name2)); //string
+
+console.log(name2);  // 89
