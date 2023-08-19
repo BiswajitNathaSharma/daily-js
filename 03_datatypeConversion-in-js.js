@@ -9,28 +9,27 @@ console.log(typeof(scoreToNumber)); //number
 
 console.log(scoreToNumber);     //NaN- not a number.
 
-/* 
+
 let temprature = ""
 let tempratureToNumber = Number(temprature)
 console.log(tempratureToNumber);        //0 
- */
 
-/*
-let temprature = true
-let tempratureToNumber = Number(temprature)
-console.log(tempratureToNumber);        //1
-*/
 
-/*
-let temprature = false
-let tempratureToNumber = Number(temprature)
-console.log(tempratureToNumber);        //0
-*/
-/*
-let temprature = undefined
-let tempratureToNumber = Number(temprature)
-console.log(tempratureToNumber);        //NaN
-*/
+let temprature1 = true
+let tempratureToNumber1 = Number(temprature1)
+console.log(tempratureToNumber1);        //1
+
+
+
+let temprature2 = false
+let tempratureToNumber2 = Number(temprature2)
+console.log(tempratureToNumber2);        //0
+
+
+let temprature3 = undefined
+let tempratureToNumber3 = Number(temprature3)
+console.log(tempratureToNumber3);        //NaN
+
 
 
 

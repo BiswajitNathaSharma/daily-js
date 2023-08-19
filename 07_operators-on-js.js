@@ -28,5 +28,5 @@ a++;    // post increment operator: increments the value by one (first print the
 ++a;    // pre increment operator: increments the value by one (first increment the value and then print it).
 // same concept apply on decrement also.
 
-// console.log(a ** b); //exponantional operator: returns 3^5 = 243
+console.log(a ** b); //exponantional operator: returns 3^5 = 243
 
