@@ -65,3 +65,9 @@ const name2 = String(score)
 console.log(typeof(name2)); //string
 
 console.log(name2);  // 89
+
+//SYMBOL
+
+// const sys = new Symbol() //can't construct using new keyword.
+const sys = Symbol("sharma") 
+console.log(sys); //Symbol(sharma)
