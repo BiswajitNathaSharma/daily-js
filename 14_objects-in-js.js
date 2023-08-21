@@ -25,4 +25,3 @@ myUser.greeting = function(){
     console.log(`Hi good evening ${this.name}`);
 }
 myUser.greeting() // Hi good evening sharma
-
