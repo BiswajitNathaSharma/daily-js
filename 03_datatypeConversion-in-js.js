@@ -2,6 +2,7 @@
 
 
 let score = 89
+//let score = "89"
 console.log(typeof(score)); // string
 
 let scoreToNumber = Number(score)
