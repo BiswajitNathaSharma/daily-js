@@ -17,6 +17,7 @@ if (true) {
     const b = 3
     console.log(a);     /* 2: Although it is inside the the if scope it returns the
                             value thet assign to it inside the scope. */
+    console.log(b);           
 }
 
 console.log(a);         /* 5: because it is declared out side the if scope it cant 
