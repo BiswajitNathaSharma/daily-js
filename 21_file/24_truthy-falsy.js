@@ -58,3 +58,22 @@ else{
     console.log("my objects are: ",my_Obj);
 }
 
+
+
+
+//Nullish coalescing operator (??)
+//The nullish coalescing operator can be seen as a special case of the logical OR (||) operator. The latter returns the right-hand side operand if the left operand is any falsy value, not only null or undefined.
+//it prevents program from unknown error occured by null and undefined, that are came from API.
+
+// let val1 = 10 ?? 20
+let val1 = null ?? 20
+console.log(val1);
+//if it gets a falsy value it ruturns the value after ?? mark, untill it gets truthy value.
+
+// ternary operator: it evaluates the condition and if true then executes statement after ? and if false execute the statement after : . 
+// (condition) ? true : false  -> general syntax
+//EXASMPLE
+let val2 = true ? 10 : 30
+console.log(val2);      //10
+let val3 = false ? 10 : 30
+console.log(val3);      //30
