@@ -1,6 +1,6 @@
 // as we know for-each method can't return a value so to return a value from a method we use filter method. the syntax are similar to the for-each method.
 
-//it used in true false type use cases.
+//it used in true false type use cases. 
 
 let myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -27,6 +27,6 @@ const books = [
     { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
   ];
 let bookMOdified = books.filter((bk)=>{
-return bk.edition > 1980 && bk.genre === 'Non-Fiction'
+return bk.edition < 2019 && bk.genre === 'Non-Fiction'
 })
 console.log(bookMOdified);
