@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding DOM</title>
+    <style>
+        body{
+            background-color: #010101;
+            color: #fff;
+        }
+        .classH1{
+            color: aqua;
+        }
+        .updated-classH1{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="amH1" class="classH1"><span>01</span> i am heading1 in dom file</h1>
+    <p id="amP" class="classP">i am paragraph in dom file</p>
+</body>
+<script>
+    const heading = document.getElementById("amH1")
+    heading.setAttribute("class", "updated-classH1")
+    heading.style.backgroundColor = "purple"
+    heading.style.padding = "0.5rem"
+    heading.style.borderRadius = "3rem"
+</script>
+</html>
