@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit & remove || DOM</title>
+</head>
+<body>
+    <ul class="languages" id="languages">
+        <li>odia</li>
+    </ul>
+</body>
+<script>
+// add new languages using function
+        function addLi(language){
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(language))
+            document.querySelector('.languages').appendChild(li)
+        }
+        addLi("hindi");
+        addLi("english");
+        addLi("urdu");
+
+        // Edit a li
+        const secondLi = document.querySelector("li:nth-child(2)")
+        const updatedLi = document.createElement('li')
+        updatedLi.appendChild(document.createTextNode("french"))
+        secondLi.replaceWith(updatedLi)
+
+        //remove a element
+        const lastLi = document.querySelector("li:nth-child(4)")
+        lastLi.remove()
+
+</script>
+</html>
