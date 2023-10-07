@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3 || Digital Clock</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: white;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 30vh;
+        }
+        #clock{
+            border: 2px solid #484848;
+            padding: 10px 25px;
+            font-size: 24px;
+            background-color: rgba(58, 58, 58, 0.357);
+            border-radius: 20px;
+            text-align: center;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 class="banner">Your local TIME</h3>
+            <div id="clock"></div>
+        
+    </div>
+</body>
+<script>
+    const clock = document.querySelector("#clock")
+    setInterval(()=>{
+        let date = new Date();
+    clock.innerHTML = date.toLocaleTimeString(),1000
+    })
+
+</script>
+</html>
