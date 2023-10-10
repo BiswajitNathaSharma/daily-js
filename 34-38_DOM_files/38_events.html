@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>events || DOM</title>
+    <style>
+      body {
+        background-color: #414141;
+        color: #fff;
+      }
+      img{
+        height: 120px;
+        width: 200px;
+      }
+      a{
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="images">
+      <li><img id="coffee" src="https://images.pexels.com/photos/4051127/pexels-photo-4051127.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load" alt="cofee"></li>
+      <li><img id="tea" src="https://images.pexels.com/photos/12091712/pexels-photo-12091712.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load" alt="tea"></li>
+      <li><img id="snow" src="https://images.pexels.com/photos/12774064/pexels-photo-12774064.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load" alt="snow"></li>
+      <li><img id="dog" src="https://images.pexels.com/photos/18101851/pexels-photo-18101851/free-photo-of-border-collie-dog-standing-in-a-meadow.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load" alt="dog"></li>
+      <a href="https:\\google.com" target="_blank">google</a>
+    </ul>
+  </body>
+<script>
+    // Bubbling: When an event happens on a component, it first runs the event handler on it, then on its parent component, then all the way up on other ancestors’ components. By default, all event handles through this order from center component event to outermost component event.
+    document.getElementById("images").addEventListener('click', ()=>{
+        console.log("ul clicked");
+    }, false)
+    
+    document.querySelector("#tea").addEventListener("click", ()=>{
+        console.log("tea clicked");
+    }, false)
+
+    //Capturing: It is the opposite of bubbling. The event handler is first on its parent component and then on the component where it was actually wanted to fire that event handler. In short, it means that the event is first captured by the outermost element and propagated to the inner elements. It is also called trickle down.
+    document.getElementById("images").addEventListener('click', ()=>{
+        console.log("ul clicked");
+    }, true)
+
+    document.querySelector("#tea").addEventListener("click", ()=>{
+        console.log("tea clicked");
+    }, true)
+
+    //goal: remove an image on click
+
+    document.querySelector("#images").addEventListener("click", (e)=>{
+        if (e.target.tagName === "IMG") {
+            e.target.parentNode.remove()
+        }
+    }, false)
+  </script> 
+</html>
