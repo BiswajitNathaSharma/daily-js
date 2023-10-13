@@ -1,0 +1,46 @@
+<!-- project to generate random number on a key press and stop on a another key press -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browswe functions || API</title>
+</head>
+<body>
+    <h1>biswajit</h1>
+    <input type="button" value="start"  id="start">
+    <input type="button" value="stop" id="stop">
+    <div id="numbers"> <br></div>
+</body>
+
+<script>
+    let numbers =  document.querySelector("#numbers")
+    let start = document.querySelector("#start")
+    let stopp = document.querySelector("#stop")
+    let generator;
+    
+    start.addEventListener("click", startGenerate)
+    stopp.addEventListener("click", stopGenerate)
+
+    function startGenerate(){
+        if (!generator) {
+            generator = setInterval(randomNumbers, 1000)
+        }
+    }
+
+    function stopGenerate() {
+        if(generator){
+            clearInterval(generator)
+            generator=null
+        }
+    }
+
+    function randomNumbers() {
+        let nums = Math.round(Math.random()*50+1)
+        numbers.appendChild(document.createTextNode(`${nums}`))
+        numbers.appendChild(document.createElement('br'))
+    }
+
+
+</script>
+</html>
