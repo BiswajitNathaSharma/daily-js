@@ -1,0 +1,57 @@
+<!-- change the background color on pressing of start key and stop on pressing stopp button  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>colour change project || DOM</title>
+</head>
+<style>
+    body {
+        background-color: #202020;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        row-gap: 10px;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h1 {
+        -webkit-filter: grayscale(50%) invert(70%);
+    }
+</style>
+
+<body>
+    <h1>Color change project using dom</h1>
+    <input type="button" value="start" id="start" />
+    <input type="button" value="stop" id="stop" />
+</body>
+<script>
+    const start = document.querySelector("#start");
+    const stop = document.querySelector("#stop");
+
+    function rancomColor() {
+        const hex = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += hex[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    start.addEventListener("click", () => {
+        const changeIt = setInterval(() => {
+            document.body.style.backgroundColor = rancomColor();
+        }, 1000);
+        stop.addEventListener("click", () => {
+            clearInterval(changeIt);
+        });
+    });
+</script>
+
+</html>
