@@ -40,14 +40,17 @@
         }
         return color;
     }
-
+    let changeIt
     start.addEventListener("click", () => {
-        const changeIt = setInterval(() => {
-            document.body.style.backgroundColor = rancomColor();
-        }, 1000);
-        stop.addEventListener("click", () => {
-            clearInterval(changeIt);
-        });
+        if (!changeIt) {
+            changeIt = setInterval(() => {
+                document.body.style.backgroundColor = rancomColor();
+            }, 1000);
+        }
+    });
+    stop.addEventListener("click", () => {
+        clearInterval(changeIt);
+        changeIt = null
     });
 </script>
 
