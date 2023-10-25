@@ -16,7 +16,30 @@
             height: 100vh;
             display: flex;
             align-items: center;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .input{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
+            gap: 10px;
+        }
+        input{
+            width: 28.5vw;
+            text-align: center;
+            outline: none;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+        }
+        input:focus{
+            border: 1px solid #dadada;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            outline: none;
         }
         .container{
             background-color: #dadada;
@@ -67,8 +90,10 @@
     </style>
 </head>
 <body>
+    <div class="input">Enter your Github account link <br> <input id="accountURL" type="text" placeholder="https://github.com/example_user_name">
+    <button id="submit">Submit</button></div>
     <div class="container">
-            <div class="image"><img id="img" src="https://images.unsplash.com/photo-1698199905339-c4f10d9f7111?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8" alt=""></div>
+            <div class="image"><img id="img" src="https://img.freepik.com/premium-vector/anonymous-user-circle-icon-vector-illustration-flat-style-with-long-shadow_520826-1931.jpg" alt="user photo"></div>
             <div class="content">
                 <div id="name">User Name: <br><span id="names"></span></div>
                 <p id="followers">followers: <br> <span id="followerss"></span></p>
@@ -81,12 +106,19 @@
     const names = document.getElementById("names")
     const followers = document.getElementById("followerss")
     const img = document.getElementById("img")
-    
+    const userURL = document.getElementById("accountURL")
+    const submit = document.getElementById("submit")
+    let userName
 
-const xhr = new XMLHttpRequest()
-    const apiId = "https://api.github.com/users/BiswajitNathaSharma"
+    submit.addEventListener("click",()=>{
+        userName = userURL.value.match(/github\.com\/([^/]+)\/?/)[1]
+        getApiUser(userName)
+    })
+
+    function getApiUser(userName){
+    const xhr = new XMLHttpRequest()
+    const apiId = `https://api.github.com/users/${userName}`
     xhr.open("GET", apiId)
-
     xhr.onreadystatechange = () => {
         if(xhr.readyState === 4){
             let data = JSON.parse(xhr.responseText);
@@ -97,6 +129,7 @@ const xhr = new XMLHttpRequest()
         }
     }
     xhr.send()
+    }
     
 </script>
 </html>
