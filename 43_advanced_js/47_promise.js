@@ -30,9 +30,21 @@
 //     console.log(user);
 // })
 
-let promiseFour = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        let error = true;
-        console.log("promise 3 called");
-    }, 2000);
-})
+
+
+//implementation of catch syntax
+// let promiseFour = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         let error = true;
+//         if(!error){
+//             resolve("i am not error message")
+//         } else{
+//             reject("something went wrong")
+//         }
+//     }, 2000);
+// })
+// promiseFour.then((msg)=>{
+//     console.log(msg);
+// }).catch((msg)=>{
+//     console.log(msg);
+// })
