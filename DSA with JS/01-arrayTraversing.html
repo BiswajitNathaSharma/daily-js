@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Traversing</title>
+</head>
+<body>
+    <input type="text" id="indexe" placeholder="Enter the Index">
+    <button onclick="GetData()">Get Value</button>
+    
+    <script>
+        let data = [10,20,55,60,52,54,20];
+        function GetData() {
+            const index = parseInt(document.getElementById("indexe").value)
+            if (index < data.length && index >= 0) {
+                console.log(data[index]);
+            }
+            else console.log(`enter valid index to get data. index value should greater than 0 and less than ${data.length+1}`)
+        }
+    </script>
+</body>
+</html>
