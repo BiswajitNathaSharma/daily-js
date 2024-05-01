@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Insertion</title>
+</head>
+<body>
+    <input type="text" id="position" placeholder="Enter the position">
+    <input type="text" id="element" placeholder="Enter the element">
+    <button onclick="addValueToArray()"> add value</button>
+    <script>
+        // const data = [0, 2, 22, 43, 55, 60];
+        // let position = 2;
+        // let element = 12;
+        // console.log(data.length)
+        // console.log(data)
+        // for(let i = data.length-1; i >= position; i--){
+            
+        //         data[i+1] = data[i]
+        //         if (i == position) {
+        //             data[i] = element;
+                
+        //     }
+        // }
+        // console.log(data)
+
+
+
+        const data = [0, 2, 22, 43, 55, 60];
+
+        function addValueToArray(){
+            const position = parseInt(document.getElementById("position").value)
+            const element = parseInt(document.getElementById("element").value)
+                    console.log(position)
+                    console.log(element)
+            for(let i = data.length-1; i >= position; i--){
+                data[i+1] = data[i]
+                if (i == position) {
+                    data[i] = element;
+                }
+            }
+        console.log(data)
+        }
+        console.log(data)
+    </script>
+</body>
+</html>
