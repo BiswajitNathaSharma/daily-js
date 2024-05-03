@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>merge array</title>
+</head>
+<body>
+    <input type="text" id="array1">
+    <input type="text" id="array2">
+
+    <button onclick="merge()">Merge</button>
+
+    <script>
+        // let array1 = [10, 20, 30, 40, 50]
+        // let array2 = [11, 21, 31, 41, 51]
+
+        // let mergedArray = []
+
+        // for(let i = 0; i<array1.length; i++){
+        //     mergedArray[i] = array1[i]
+        // }
+        // for(let i = 0; i<array2.length; i++){
+        //     mergedArray[array1.length + i] = array2[i]
+        // }
+        // console.log(mergedArray)
+
+        function merge(){
+            const array1 = document.getElementById("array1").value
+            const array2 = document.getElementById("array2").value
+
+            let array01 = []
+            let array02 = []
+            let mergedArray=[]
+
+            array1.split(",").forEach(ele => {
+                array01.push(parseInt(ele))
+            });
+            array2.split(",").forEach(ele => {
+                array02.push(parseInt(ele))
+            });
+
+            for(let i=0; i<array01.length; i++){
+                mergedArray[i] = array01[i]
+            }
+            for(let i=0; i<array02.length; i++){
+                mergedArray[array01.length + i] = array02[i]
+            }
+            console.log(mergedArray)
+            
+        }
+    </script>
+</body>
+</html>
